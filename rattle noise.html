@@ -17,7 +17,7 @@
 </head>
 <body>
 	<h1>Rattle Noise</h1>
-	<audio id="audio" src="https://drive.google.com/uc?id=1HMeJSpWgIl5XBYx9y0bcVpfyp__JN-ks" type="audio/mpeg"></audio>
+	<audio id="audio" src="https://drive.google.com/uc?id=1HMeJSpWgIl5XBYx9y0bcVpfyp__JN-ks&v=1" type="audio/mpeg"></audio>
 	<!-- 添加播放暂停按钮 -->
 	<i id="play-pause-btn" class="fas fa-play-circle play-pause-btn"></i>
 	<script>
@@ -37,6 +37,24 @@
 				playPauseBtn.classList.remove('playing');
 				playPauseBtn.classList.remove('fa-pause-circle');
 				playPauseBtn.classList.add('fa-play-circle');
+			}
+		});
+		
+		// 添加按键事件
+		document.addEventListener('keydown', (event) => {
+			if (event.code === 'Space') {
+				event.preventDefault();
+				if (audio.paused) {
+					audio.play();
+					playPauseBtn.classList.add('playing');
+					playPauseBtn.classList.remove('fa-play-circle');
+					playPauseBtn.classList.add('fa-pause-circle');
+				} else {
+					audio.pause();
+					playPauseBtn.classList.remove('playing');
+					playPauseBtn.classList.remove('fa-pause-circle');
+					playPauseBtn.classList.add('fa-play-circle');
+				}
 			}
 		});
 	</script>

@@ -2,61 +2,16 @@
 <html>
 <head>
 	<title>Rattle Noise</title>
-	<!-- 添加Font Awesome图标 -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-czElZZkNnL6EHpES7lCB0Pc8upGTF9X1mUbZzVGoA+z2oG/JVweZr+Jt1Ws/mzE0HtJW9t4eYb/qJn0T+C8klw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<style>
-		.play-pause-btn {
-			font-size: 2rem;
-			color: #666;
-			cursor: pointer;
-		}
-		.playing {
-			color: #007bff;
-		}
-	</style>
 </head>
 <body>
 	<h1>Rattle Noise</h1>
-	<audio id="audio" src="https://drive.google.com/uc?id=1HMeJSpWgIl5XBYx9y0bcVpfyp__JN-ks&v=1" type="audio/mpeg"></audio>
-	<!-- 添加播放暂停按钮 -->
-	<i id="play-pause-btn" class="fas fa-play-circle play-pause-btn"></i>
+	<button onclick="playAudio()">Play Audio</button>
+	<audio id="audio" src="https://drive.google.com/uc?id=1HMeJSpWgIl5XBYx9y0bcVpfyp__JN-ks" type="audio/mpeg"></audio>
 	<script>
-		// 获取播放暂停按钮和音频元素
-		const playPauseBtn = document.getElementById('play-pause-btn');
-		const audio = document.getElementById('audio');
-		
-		// 给按钮添加点击事件
-		playPauseBtn.addEventListener('click', () => {
-			if (audio.paused) {
-				audio.play();
-				playPauseBtn.classList.add('playing');
-				playPauseBtn.classList.remove('fa-play-circle');
-				playPauseBtn.classList.add('fa-pause-circle');
-			} else {
-				audio.pause();
-				playPauseBtn.classList.remove('playing');
-				playPauseBtn.classList.remove('fa-pause-circle');
-				playPauseBtn.classList.add('fa-play-circle');
-			}
-		});
-		
-		// 添加按键事件
-		document.addEventListener('keydown', (event) => {
-			if (event.code === 'Space') {
-				event.preventDefault();
-				if (audio.paused) {
-					audio.play();
-					playPauseBtn.classList.add('playing');
-					playPauseBtn.classList.remove('fa-play-circle');
-					playPauseBtn.classList.add('fa-pause-circle');
-				} else {
-					audio.pause();
-					playPauseBtn.classList.remove('playing');
-					playPauseBtn.classList.remove('fa-pause-circle');
-					playPauseBtn.classList.add('fa-play-circle');
-				}
-			}
-		});
+		function playAudio() {
+			var audio = document.getElementById("audio");
+			audio.play();
+		}
 	</script>
 </body>
 </html>

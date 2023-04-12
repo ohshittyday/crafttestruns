@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Indian Printing Block</title>
 	<style>
 		body {
-			background: url("https://drive.google.com/uc?id=1n6FCvPqv5aOewIRHnxFqI7pUgGAO2-TU") no-repeat center center fixed;
+			background-image: url("https://drive.google.com/uc?id=1n6FCvPqv5aOewIRHnxFqI7pUgGAO2-TU");
 			background-size: cover;
 			display: flex;
 			flex-direction: column;
@@ -17,18 +18,37 @@
 		h1 {
 			font-size: 3rem;
 			margin-top: -3rem; /* 将标题向上挪动3rem */
-			color: #749650; /* 将标题文字颜色改为 #749650 */
+			color: #9ab87a; /* 将标题文字颜色改为#9ab87a */
+			text-align: center;
 		}
 
 		h2 {
 			font-size: 2rem;
 			margin-top: 1rem; /* 将第二行向上挪动1rem */
-			color: #749650; /* 将第二行文字颜色改为 #749650 */
+			color: #9ab87a; /* 将第二行文字颜色改为#9ab87a */
+			text-align: center;
 		}
 
 		audio {
 			width: 80%;
 			margin-top: 2rem; /* 将音频向上挪动2rem */
+		}
+
+		@media screen and (max-width: 480px) {
+			h1 {
+				font-size: 2rem;
+				margin-top: -2rem; /* 将标题向上挪动2rem */
+			}
+
+			h2 {
+				font-size: 1.5rem;
+				margin-top: 0.5rem; /* 将第二行向上挪动0.5rem */
+			}
+
+			audio {
+				width: 100%;
+				margin-top: 1rem; /* 将音频向上挪动1rem */
+			}
 		}
 	</style>
 </head>
